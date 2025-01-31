@@ -33,11 +33,3 @@ To verify all functions work correctly, run:
 python -m unittest discover -s src/test
 ```
 
-## Methods Implemented
-- **Approximation Algorithm**: Iteratively approximates square roots.
-- **Bisection Method**: Root-finding algorithm for continuous functions.
-- **Fixed-Point Iteration**: Iterative method to find solutions to x = g(x).
-- **Newton-Raphson Method**: Root-finding using derivatives for fast convergence.
-
-Ensure all functions pass before submission!
-
