@@ -16,19 +16,16 @@ cot-4500-Pro1/
 ```
 
 ## Installation
-Make sure you have Python installed (3.x recommended). Then, install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Running the Code
-Execute the main program:
 ```bash
 python src/main/assignment_1.py
 ```
 
 ## Running Tests
-To verify all functions work correctly, run:
 ```bash
 python -m unittest discover -s src/test
 ```
