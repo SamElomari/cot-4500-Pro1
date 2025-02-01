@@ -30,4 +30,7 @@ To run tests:
 ```bash
 pytest src/test/test_assignment_1.py
 ```
-
+Ensure PYTHONPATH is correctly set if needed:
+```bash
+export PYTHONPATH=$(pwd)/src
+```
