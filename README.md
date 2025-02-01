@@ -8,10 +8,9 @@ This assignment implements several numerical methods for solving equations and a
 - **Newton-Raphson Method**: Uses derivatives to quickly approximate a root of a function.
 
 ## Requirements
-Before running the program or tests, ensure you have Python installed and install the required dependencies.
-
+Python must be installed on the machine.
 ### Installing Dependencies
-Run the following command to install required packages:
+Code to download the dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -19,21 +18,16 @@ pip install -r requirements.txt
 ## Running the Program
 Each of the required functions are implemented in `assignment_1.py`. These functions can be imported into a script or tested  interactively.
 
-To run the script directly:
+To run the script directly, (won't produce outputs):
 ```bash
 python src/main/assignment_1.py
 ```
 
 ## Running the Tests
-The test cases are located in `test_assignment_1.py` and verify the correctness of each algorithm.
+The test cases are located in `test_assignment_1.py` as per the instructions and verify the correctness of each algorithm against slide examples.
 
-To run all tests using `pytest`:
+To run use `pytest`:
 ```bash
 pytest src/test/test_assignment_1.py
-```
-
-To run tests using `unittest`:
-```bash
-python -m unittest discover src/test
 ```
 
