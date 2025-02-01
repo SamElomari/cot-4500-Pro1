@@ -1,5 +1,16 @@
 import unittest
-from src.main.assignment_1 import approximation_algorithm, bisection_method, fixed_point_iteration_float, newton_raphson
+import sys
+import os
+from decimal import Decimal
+print("Current sys.path:", sys.path)
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+from src.main.assignment_1 import (
+    approximation_algorithm,
+    bisection_method,
+    fixed_point_iteration,
+    newton_raphson
+)
+
 
 class TestAssignment1(unittest.TestCase):
     def test_approximation_algorithm(self):
@@ -48,7 +59,7 @@ class TestAssignment1(unittest.TestCase):
             return -x**3 - 4*x**2 + 10
 
         # Run fixed-point iteration
-        result, iterations = fixed_point_iteration_float(g_a, x0=1.5, tol=1e-6, max_iter=50)
+        result, iterations = fixed_point_iteration(g_a, x0=1.5, tol=1e-6, max_iter=50)
         
         # Assert the result is None (indicating divergence)
         self.assertIsNone(result, "Expected divergence for Example (a)")
@@ -59,10 +70,12 @@ class TestAssignment1(unittest.TestCase):
         Expected: Convergence to ~1.365230236 after ~20 iterations.
         """
         def g_b(x):
-            return ((10 - x**3) / 4)**0.5
+            return Decimal(((10 - x**3) / 4).sqrt())
+
+
 
         # Run fixed-point iteration
-        result, iterations = fixed_point_iteration_float(g_b, x0=1.5, tol=1e-6, max_iter=50)
+        result, iterations = fixed_point_iteration(g_b, x0=1.5, tol=1e-6, max_iter=50)
         
         # Assert the result is approximately 1.365230236
         self.assertAlmostEqual(result, 1.365230236, places=6, 
