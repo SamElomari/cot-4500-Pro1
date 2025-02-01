@@ -16,14 +16,6 @@ Run the following command to install required packages:
 pip install -r requirements.txt
 ```
 
-## Running the Program
-Each function is implemented in `assignment_1.py`. You can import these functions into your own script or test them interactively.
-
-To run the script directly:
-```bash
-python src/main/assignment_1.py
-```
-
 ## Running the Tests
 The test cases are located in `test_assignment_1.py` and verify the correctness of each algorithm.
 
