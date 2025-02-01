@@ -1,32 +1,39 @@
-# cot-4500-Pro1
-# Numerical Methods - Programming Assignment 1
+# Programming Assignment 1
 
-## Project Structure
-```
-cot-4500-Pro1/
-├── src/
-│   ├── main/
-│   │   ├── __init__.py
-│   │   ├── assignment_1.py  (Main implementation)
-│   ├── test/
-│   │   ├── __init__.py
-│   │   ├── test_assignment_1.py  (Unit tests)
-├── requirements.txt  (Dependencies)
-├── README.md  (Compilation & usage instructions)
-```
+## Description
+This assignment implements several numerical methods for solving equations and approximations:
+- **Approximation Algorithm**: Computes the square root of 2 using an iterative method.
+- **Bisection Method**: Finds a root of a given function within a specified interval.
+- **Fixed-Point Iteration**: Iteratively solves for a fixed point of a function.
+- **Newton-Raphson Method**: Uses derivatives to quickly approximate a root of a function.
 
-## Installation
+## Requirements
+Before running the program or tests, ensure you have Python installed and install the required dependencies.
+
+### Installing Dependencies
+Run the following command to install required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Running the Code
+## Running the Program
+Each function is implemented in `assignment_1.py`. You can import these functions into your own script or test them interactively.
+
+To run the script directly:
 ```bash
 python src/main/assignment_1.py
 ```
 
-## Running Tests
+## Running the Tests
+The test cases are located in `test_assignment_1.py` and verify the correctness of each algorithm.
+
+To run all tests using `pytest`:
 ```bash
-python -m unittest discover -s src/test
+pytest src/test/test_assignment_1.py
+```
+
+To run tests using `unittest`:
+```bash
+python -m unittest discover src/test
 ```
 
