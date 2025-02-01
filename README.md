@@ -28,6 +28,6 @@ The test cases are located in `test_assignment_1.py` as per the instructions and
 
 To run tests using `unittest`:
 ```bash
-python -m unittest discover src/test
+pytest src/test/test_assignment_1.py
 ```
 
