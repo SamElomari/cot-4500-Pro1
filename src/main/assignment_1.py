@@ -23,15 +23,18 @@ def bisection_method(f, a, b, tol=1e-6):
     if f(a) * f(b) >= 0:
         raise ValueError("f(a) and f(b) must have opposite signs")
     
+    iterations = 0  
     while (b - a) / 2.0 > tol:
+        iterations += 1  
         c = (a + b) / 2.0
         if f(c) == 0:
-            return c
+            return c, iterations
         elif f(a) * f(c) < 0:
             b = c
         else:
             a = c
-    return (a + b) / 2.0
+    return (a + b) / 2.0, iterations  # Ensure the function returns both values
+
 
 def fixed_point_iteration(g, x0, tol=1e-6, max_iter=50):
     """Fixed-point iteration method to solve x = g(x)."""
@@ -41,12 +44,13 @@ def fixed_point_iteration(g, x0, tol=1e-6, max_iter=50):
         
         # Check for divergence or extreme values
         if abs(x_new) > Decimal('1e10'):
-            return None
-        
+            return None, i
+
         if abs(x_new - x) < Decimal(tol):
-            return float(x_new)
+            return float(x_new), i
         x = x_new
-    return None
+    return None, max_iter  
+
 
 def newton_raphson(f, df, x0, tol=1e-6, max_iter=100):
     """Newton-Raphson method for finding roots of f."""
@@ -58,7 +62,8 @@ def newton_raphson(f, df, x0, tol=1e-6, max_iter=100):
             raise ValueError("Derivative is zero. Newton-Raphson method fails.")
         x_new = x - fx / dfx
         if abs(x_new - x) < tol:
-            return x_new
+            return x_new, i + 1
         x = x_new
     raise ValueError("Newton-Raphson method did not converge")
+
 
