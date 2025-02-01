@@ -26,8 +26,8 @@ python src/main/assignment_1.py
 ## Running the Tests
 The test cases are located in `test_assignment_1.py` as per the instructions and verify the correctness of each algorithm against slide examples.
 
-To run use `pytest`:
+To run tests using `unittest`:
 ```bash
-pytest src/test/test_assignment_1.py
+python -m unittest discover src/test
 ```
 
